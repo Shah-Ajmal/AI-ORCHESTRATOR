@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/documents", documentRoutes);
+app.get("/", (req, res) => {
+  res.send("Welcome to the AI Orchestrator API!");
+});
 
 // Basic health-check endpoint
 app.get("/health", (req, res) => res.json({ status: "ok" }));
